@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.programacion3.hypegeeks.app.Login"
+android:background="#02040e"
+    >
+
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+
+
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/copita" />
+
+        <LinearLayout
+            android:id="@+id/UserAndPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="107dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/User"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:hint="USERNAME" />
+
+
+            <EditText
+                android:id="@+id/Password"
+                android:layout_width="match_parent"
+                android:layout_height="89dp"
+                android:hint="PASSWORD"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/enter"
+            android:layout_width="139dp"
+            android:layout_height="62dp"
+            android:layout_below="@+id/UserAndPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="183dp"
+            android:text="Button" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+</ScrollView>
