@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#b74424">
@@ -40,7 +41,7 @@
             android:layout_height="90dp"
             android:background="#b74424"
             android:layout_marginStart="80dp"
-            android:src="@drawable/añadir"
+            android:src="@drawable/aniadir"
             android:layout_marginTop="0dp"/>
 
     </LinearLayout>
@@ -49,8 +50,5 @@
         android:layout_height="90dp"
         android:background="#b74424"
         android:layout_marginStart="270dp"
-        android:src="@drawable/buscar"
-        android:layout_marginTop="dp"/>
-
-
+        android:src="@drawable/buscar"/>
 </LinearLayout>
