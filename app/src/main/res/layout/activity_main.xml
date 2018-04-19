@@ -30,7 +30,6 @@
             android:gravity="center"
             android:orientation="vertical">
 
-
             <EditText
                 android:id="@+id/User"
                 android:layout_width="match_parent"
