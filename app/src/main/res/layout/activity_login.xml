@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.programacion3.hypegeeks.app.Login"
-android:background="#02040e"
-    >
+    tools:context="com.programacion3.hypegeeks.app.MainActivity"
+    android:background="#02040e" >
 
     <RelativeLayout
         android:layout_margin="5dp"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-
-
-        >
+        android:layout_width="match_parent">
 
         <ImageView
             android:layout_width="match_parent"
@@ -39,8 +35,7 @@ android:background="#02040e"
                 android:id="@+id/User"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:hint="USERNAME" />
-
+                android:hint="USER NAME" />
 
             <EditText
                 android:id="@+id/Password"
@@ -58,13 +53,10 @@ android:background="#02040e"
             android:layout_below="@+id/UserAndPassword"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="183dp"
-            android:text="Button" />
+            android:onClick="clickLogIn"
+            android:background="#f1ca7c"
+            android:text="Log In" />
 
 
     </RelativeLayout>
-
-
-
-
-
 </ScrollView>
