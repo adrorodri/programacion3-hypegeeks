@@ -27,11 +27,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="60dp"
             android:textStyle="bold"
             android:layout_marginStart="70dp"
-            android:textSize="20dp"
+            android:textSize="30dp"
             android:layout_marginTop="50dp"
             android:textColor="#ffffff"
             android:background="#663325"
@@ -40,7 +40,7 @@
             android:layout_width="100dp"
             android:layout_height="90dp"
             android:background="#b74424"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="40dp"
             android:src="@drawable/aniadir"
             android:layout_marginTop="0dp"/>
 
