@@ -25,18 +25,10 @@ public class RecylcerView extends AppCompatActivity {
             productList.add(new Product(i, i * 3.0, 20 - i, "Descripcion " + String.valueOf(i), R.drawable.pollito));
         }
 
-        // Create RecyclerView adapter
         ProductsRecyclerAdapter adapter = new ProductsRecyclerAdapter(this, productList);
 
-        // Create and set Layout manager:
-        // LinearLayoutManager => Linear
-        // StaggeredGridLayoutManager => Like Pinterest
-        // GridLayoutManager => Grid
-
-        // recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
 
-        // Set adapter
         recyclerView.setAdapter(adapter);
     }
 }
