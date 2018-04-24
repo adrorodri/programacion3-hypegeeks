@@ -5,45 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.programacion3.hypegeeks.app.MainActivity"
-    android:background="#02040e" >
+    android:background="@drawable/copita"
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_margin="5dp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/copita" />
-
-        <LinearLayout
-            android:id="@+id/UserAndPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="107dp"
-            android:gravity="center"
-            android:orientation="vertical">
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text = "Pa Ti Pa Mi"
+                 android:layout_marginTop="50dp"
+                 android:layout_gravity="center_horizontal"
+                 android:textSize="50dp"
+                 android:textColor = "#ffffff" />
 
             <EditText
                 android:id="@+id/User"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:hint="USER NAME" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="USER NAME"
+                android:textColorHint="#ffffff"/>
 
             <EditText
                 android:id="@+id/Password"
                 android:layout_width="match_parent"
-                android:layout_height="89dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
                 android:hint="PASSWORD"
+                android:textColorHint="#ffffff"
                 android:inputType="textPassword" />
 
-        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp">
+        <Button
+            android:id="@+id/resgistro"
+            android:layout_width="139dp"
+            android:layout_height="62dp"
+            android:layout_below="@+id/UserAndPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="40dp"
+            android:onClick="clickButtonClick"
+            android:background="#f1ca7c"
+            android:text="Sing In" />
 
         <Button
             android:id="@+id/enter"
@@ -51,11 +58,9 @@
             android:layout_height="62dp"
             android:layout_below="@+id/UserAndPassword"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="183dp"
-            android:onClick="clickLogIn"
+            android:layout_marginStart="30dp"
+            android:onClick="clickButtonClick"
             android:background="#f1ca7c"
             android:text="Log In" />
-
-
-    </RelativeLayout>
+        </LinearLayout>
 </LinearLayout>
