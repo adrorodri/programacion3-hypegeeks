@@ -44,14 +44,13 @@ public class MainActivity extends AppCompatActivity {
         userValue = String.valueOf(enterUser.getText());
         passwordValue = String.valueOf(enterPassword.getText());
 
-        Intent intent = null;
 
         switch (view.getId()) {
             case R.id.enter: {
 
                 if (users.contains(userValue)) {
                     if (passwords.get(users.indexOf(userValue)).equals(passwordValue)) {
-                        intent = new Intent(this, MainMenuLayoutActivity.class);
+                        Intent intent = new Intent(this, MainMenuLayoutActivity.class);
                         startActivity(intent);
                         break;
                     } else {
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
             case R.id.resgistro: {
-                intent = new Intent(this, RegisterLayoutActivity.class);
+                Intent intent = new Intent(this, RegisterLayoutActivity.class);
                 startActivity(intent);
                 break;
             }
