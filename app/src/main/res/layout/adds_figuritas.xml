@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#f70a32">
+
+    <ImageView
+        android:id="@+id/figuritaDeJugador"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:id="@+id/banderaDelPais"
+        android:layout_width="95dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="24dp" />
+
+    <FrameLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/banderaDelPais"
+        android:layout_marginEnd="99dp"
+        android:background="#080808">
+
+        <TextView
+            android:id="@+id/numroDeFigurita"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="#f70a32" />
+
+    </FrameLayout>>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/banderaDelPais"
+        android:layout_marginEnd="16dp"
+        android:textSize="40dp"
+        android:text="+"
+        android:padding="1dp"/>
+
+
+
+
+</RelativeLayout>
