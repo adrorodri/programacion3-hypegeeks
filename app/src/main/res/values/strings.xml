@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">App</string>
     <string name="rep">REPETIDAS</string>
     <string name="off">Apagado!</string>
@@ -9,5 +8,4 @@
     <string name="car">Carro</string>
     <string name="nombre">Nombre</string>
     <string name="faltan">Cantidad de repetidas</string>
-
 </resources>
