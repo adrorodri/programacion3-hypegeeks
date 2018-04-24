@@ -2,4 +2,6 @@
     <string name="app_name">App</string>
     <string name="rep">REPETIDAS</string>
     <string name="off">Apagado!</string>
+    <string name="sila">Cantidad de Figuritas</string>
+    <string name="nola">Apagado!</string>
 </resources>
