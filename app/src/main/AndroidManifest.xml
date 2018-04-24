@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListAdds"></activity>
-        <activity android:name=".MainMenuLayoutActivity"></activity>
-        <activity android:name=".RegisterLayoutActivity"></activity>
+        <activity android:name=".ListAdds" />
+        <activity android:name=".MainMenuLayoutActivity" />
+        <activity android:name=".RegisterLayoutActivity" />
+        <activity android:name=".Tienda"></activity>
     </application>
 
 </manifest>
