@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         passwords.add("1213");
     }
 
-    public void clickLogIn(View view) {
+    public void clickButtonClick(View view) {
         userValue = String.valueOf(enterUser.getText());
         passwordValue = String.valueOf(enterPassword.getText());
 

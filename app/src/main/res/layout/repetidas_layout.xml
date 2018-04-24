@@ -11,7 +11,7 @@
         android:background="#b74424"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="REPETIDAS"
+        android:text="@string/rep"
         android:textSize="50dp" />
     <TextView
         android:layout_width="wrap_content"
