@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListAdds"></activity>
+        <activity android:name=".MainMenuLayoutActivity"></activity>
+        <activity android:name=".RegisterLayoutActivity"></activity>
     </application>
 
 </manifest>

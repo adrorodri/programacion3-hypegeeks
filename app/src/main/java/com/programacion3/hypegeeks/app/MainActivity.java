@@ -1,5 +1,6 @@
 package com.programacion3.hypegeeks.app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,20 +37,36 @@ public class MainActivity extends AppCompatActivity {
         passwords.add("1011");
         users.add("vivian");
         passwords.add("1213");
+
     }
 
     public void clickButtonClick(View view) {
         userValue = String.valueOf(enterUser.getText());
         passwordValue = String.valueOf(enterPassword.getText());
 
-        if (users.contains(userValue)) {
-            if (passwords.get(users.indexOf(userValue)).equals(passwordValue)) {
+        Intent intent = null;
 
-            } else {
-                Toast.makeText(this, "Contrasenia incorrecta", Toast.LENGTH_LONG).show();
+        switch (view.getId()) {
+            case R.id.enter: {
+
+                if (users.contains(userValue)) {
+                    if (passwords.get(users.indexOf(userValue)).equals(passwordValue)) {
+                        intent = new Intent(this, MainMenuLayoutActivity.class);
+                        startActivity(intent);
+                        break;
+                    } else {
+                        Toast.makeText(this, "Contrasenia incorrecta", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(this, "usuario incorrecto", Toast.LENGTH_LONG).show();
+                }
+
             }
-        } else {
-            Toast.makeText(this, "usuario incorrecto", Toast.LENGTH_LONG).show();
+            case R.id.resgistro: {
+                intent = new Intent(this, RegisterLayoutActivity.class);
+                startActivity(intent);
+                break;
+            }
         }
     }
 }
