@@ -1,7 +1,6 @@
 package com.programacion3.hypegeeks.app;
 
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +8,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class AdapterAdds extends BaseAdapter {
 
@@ -26,10 +22,7 @@ public class AdapterAdds extends BaseAdapter {
     public AdapterAdds(Context context,List<Figuritas> AddsList ){
         this.AddsList=AddsList;
         this.context=context;
-
-
     }
-
     @Override
     public int getCount() {
         return AddsList.size();
@@ -75,10 +68,8 @@ public class AdapterAdds extends BaseAdapter {
                 }else{
                     button.setText("+");
                 }
-
             }
         });
-
         return convertView;
     }
 }

@@ -1,16 +1,15 @@
 package com.programacion3.hypegeeks.app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
 import java.util.LinkedList;
 import java.util.List;
 
 
 
 public class ListAdds extends AppCompatActivity {
-
-
 
     ListView listView;
     List<Figuritas> figuritasList= new LinkedList<>();

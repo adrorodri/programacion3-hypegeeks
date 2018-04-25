@@ -37,8 +37,7 @@
             android:layout_width="214dp"
             android:layout_height="50dp" />
 
-    </LinearLayout>>
-
+    </LinearLayout>
     <ListView
         android:id="@+id/listaDeTienda"
         android:layout_width="305dp"

@@ -38,8 +38,7 @@
             android:layout_gravity="center"
             android:background="#f70a32" />
 
-    </FrameLayout>>
-
+    </FrameLayout>
     <Button
         android:id="@+id/buttonAdd"
         android:layout_width="70dp"
@@ -50,8 +49,4 @@
         android:textSize="40dp"
         android:text="+"
         android:padding="1dp"/>
-
-
-
-
 </RelativeLayout>

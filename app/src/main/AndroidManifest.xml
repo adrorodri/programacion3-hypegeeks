@@ -20,6 +20,7 @@
         <activity android:name=".MainMenuLayoutActivity"></activity>
         <activity android:name=".RegisterLayoutActivity"></activity>
         <activity android:name=".RepeLayoutActivity"></activity>
+        <activity android:name=".Tienda"></activity>
     </application>
 
 </manifest>

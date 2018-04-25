@@ -1,7 +1,7 @@
 package com.programacion3.hypegeeks.app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import java.util.LinkedList;
@@ -25,7 +25,6 @@ public class Tienda extends AppCompatActivity {
             tiendaList.add(new ObjetosDeTienda(i,R.drawable.copita,""+i));
 
         }
-
 
         AdaptadorDeObjetosDeTienda adapter = new AdaptadorDeObjetosDeTienda(this,tiendaList);
         listView.setAdapter(adapter);
