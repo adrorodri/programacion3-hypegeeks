@@ -10,6 +10,8 @@ import java.util.List;
 
 public class ListAdds extends AppCompatActivity {
 
+
+
     ListView listView;
     List<Figuritas> figuritasList= new LinkedList<>();
 
