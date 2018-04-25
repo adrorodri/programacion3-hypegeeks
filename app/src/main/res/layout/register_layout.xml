@@ -32,13 +32,11 @@
         android:layout_marginTop="15dp"
         android:hint="Teléfono"
         android:inputType="number" />
-    <EditText
-        android:id="@+id/textPunto"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Punto de Encuentro"
-        android:inputType="text"/>
+    <<Button
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text = " Selecionar Punto de encuentro"/>
     <EditText
         android:id="@+id/textPassword"
         android:layout_width="fill_parent"
