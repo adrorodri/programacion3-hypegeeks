@@ -3,11 +3,14 @@ package com.programacion3.hypegeeks.app;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
-
 import java.util.LinkedList;
 import java.util.List;
 
+
+
 public class ListAdds extends AppCompatActivity {
+
+
 
     ListView listView;
     List<Figuritas> figuritasList= new LinkedList<>();
@@ -19,9 +22,14 @@ public class ListAdds extends AppCompatActivity {
 
         ListView listView= findViewById(R.id.ListaAdds);
 
-        LlenadorDeListasAdd llenador = new LlenadorDeListasAdd(figuritasList);
+       // LlenadorDeListasAdd llenador = new LlenadorDeListasAdd(figuritasList);
 
-    figuritasList=llenador.getFiguritasList();
+    //figuritasList=llenador.getFiguritasList();
+
+        for(int i =0; i<15;i++){
+            figuritasList.add(new Figuritas(i,R.drawable.copita,R.drawable.buscar,""+i));
+
+        }
 
         AdapterAdds adapter= new AdapterAdds(this, figuritasList);
         listView.setAdapter(adapter);
