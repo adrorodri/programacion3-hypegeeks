@@ -101,7 +101,7 @@
                 android:layout_below="@+id/nombre"
                 android:text="@string/sila"
                 android:textColor="@android:color/white" />
-             </RelativeLayout>
+        </RelativeLayout>
     </RelativeLayout>
 
 </LinearLayout>
