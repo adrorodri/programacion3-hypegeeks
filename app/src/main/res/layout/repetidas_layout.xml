@@ -40,7 +40,9 @@
             android:layout_width="100dp"
             android:layout_height="90dp"
             android:background="#b74424"
+            android:onClick="clickRepetidas"
             android:layout_marginStart="40dp"
+            android:id="@+id/add"
             android:src="@drawable/aniadir"
             android:layout_marginTop="0dp"/>
 

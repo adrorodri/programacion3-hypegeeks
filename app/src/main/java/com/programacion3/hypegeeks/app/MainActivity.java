@@ -43,26 +43,25 @@ public class MainActivity extends AppCompatActivity {
     public void clickButtonClick(View view) {
         userValue = String.valueOf(enterUser.getText());
         passwordValue = String.valueOf(enterPassword.getText());
-
+        Intent intent;
 
         switch (view.getId()) {
             case R.id.enter: {
 
                 if (users.contains(userValue)) {
                     if (passwords.get(users.indexOf(userValue)).equals(passwordValue)) {
-                        Intent intent = new Intent(this, MainMenuLayoutActivity.class);
+                        intent = new Intent(this, MainMenuLayoutActivity.class);
                         startActivity(intent);
-                        break;
                     } else {
                         Toast.makeText(this, "Contrasenia incorrecta", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     Toast.makeText(this, "usuario incorrecto", Toast.LENGTH_LONG).show();
                 }
-
+              break;
             }
             case R.id.resgistro: {
-                Intent intent = new Intent(this, RegisterLayoutActivity.class);
+                intent = new Intent(this, RegisterLayoutActivity.class);
                 startActivity(intent);
                 break;
             }

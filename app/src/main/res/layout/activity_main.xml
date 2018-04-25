@@ -50,7 +50,7 @@
             android:layout_marginStart="40dp"
             android:onClick="clickButtonClick"
             android:background="#f1ca7c"
-            android:text="Sing In" />
+            android:text="Sign In" />
 
         <Button
             android:id="@+id/enter"

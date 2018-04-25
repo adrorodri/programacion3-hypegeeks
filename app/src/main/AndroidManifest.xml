@@ -19,6 +19,7 @@
         <activity android:name=".ListAdds"></activity>
         <activity android:name=".MainMenuLayoutActivity"></activity>
         <activity android:name=".RegisterLayoutActivity"></activity>
+        <activity android:name=".RepeLayoutActivity"></activity>
     </application>
 
 </manifest>
