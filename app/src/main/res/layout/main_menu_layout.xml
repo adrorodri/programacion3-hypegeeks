@@ -100,9 +100,7 @@
 
             <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:contextClickable="@android: ">
-
+                android:layout_height="wrap_content">
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="wrap_content"
@@ -110,6 +108,4 @@
             </FrameLayout>
         </RelativeLayout>
     </RelativeLayout>
-
-
 </LinearLayout>
