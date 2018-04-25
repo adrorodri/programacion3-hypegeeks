@@ -80,16 +80,15 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="144dp"
-                android:layout_marginTop="69dp"
+                android:layout_marginTop="100dp"
                 android:text="@string/nombre"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_alignStart="@+id/nombre"
-                android:layout_marginTop="166dp"
+                android:layout_marginTop="200dp"
                 android:text="@string/faltan"
                 android:textColor="@android:color/white" />
 
