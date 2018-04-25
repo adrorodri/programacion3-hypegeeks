@@ -19,8 +19,13 @@ public class Tienda extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listaDeTienda);
 
-        LlenadordeListTienda llenador = new LlenadordeListTienda(tiendaList);
-        tiendaList=llenador.getList();
+       // LlenadordeListTienda llenador = new LlenadordeListTienda(tiendaList);
+       // tiendaList=llenador.getList();
+        for(int i =0; i<15;i++){
+            tiendaList.add(new ObjetosDeTienda(i,R.drawable.copita,""+i));
+
+        }
+
 
         AdaptadorDeObjetosDeTienda adapter = new AdaptadorDeObjetosDeTienda(this,tiendaList);
         listView.setAdapter(adapter);

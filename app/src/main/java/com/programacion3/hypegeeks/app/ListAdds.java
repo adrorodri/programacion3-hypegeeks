@@ -22,9 +22,14 @@ public class ListAdds extends AppCompatActivity {
 
         ListView listView= findViewById(R.id.ListaAdds);
 
-        LlenadorDeListasAdd llenador = new LlenadorDeListasAdd(figuritasList);
+       // LlenadorDeListasAdd llenador = new LlenadorDeListasAdd(figuritasList);
 
-    figuritasList=llenador.getFiguritasList();
+    //figuritasList=llenador.getFiguritasList();
+
+        for(int i =0; i<15;i++){
+            figuritasList.add(new Figuritas(i,R.drawable.copita,R.drawable.buscar,""+i));
+
+        }
 
         AdapterAdds adapter= new AdapterAdds(this, figuritasList);
         listView.setAdapter(adapter);
