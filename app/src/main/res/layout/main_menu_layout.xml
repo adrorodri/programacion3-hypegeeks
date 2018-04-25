@@ -103,5 +103,4 @@
                 android:textColor="@android:color/white" />
         </RelativeLayout>
     </RelativeLayout>
-
 </LinearLayout>

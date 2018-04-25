@@ -17,10 +17,12 @@ public class MainMenuLayoutActivity extends AppCompatActivity {
             case R.id.botonRepetidas: {
                 intent = new Intent(this, RepeLayoutActivity.class);
                 startActivity(intent);
+                break;
             }
             case R.id.aniadir:{
                 intent = new Intent(this, ListAdds.class);
                 startActivity(intent);
+                break;
             }
         }
     }
