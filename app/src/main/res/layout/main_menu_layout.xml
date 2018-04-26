@@ -25,14 +25,14 @@
             android:background="#000acc"
             android:text="@string/nola" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:background="#000acc"
             android:id="@+id/carrito"
-            android:text="@string/car" />
+            android:src="@drawable/carrito" />
 
         <ImageButton
             android:layout_width="61dp"
