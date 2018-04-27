@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:hint="USER NAME"
+                android:drawableLeft="@drawable/ic_action_user"
                 android:textColorHint="#ffffff"/>
 
             <EditText
@@ -33,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:hint="PASSWORD"
+                android:drawableLeft="@drawable/ic_action_password"
                 android:textColorHint="#ffffff"
                 android:inputType="textPassword" />
 
