@@ -10,39 +10,36 @@ import android.widget.Toast;
 
 public class RegisterLayoutActivity extends AppCompatActivity {
 
-    SharedPreferences sharedPreferences;
-    static final String SHARED_PREFERENCES = "MySharedPreferences";
-    static final String KEY_USERNAME = "username";
     EditText editTextUsername;
+    EditText editEmailUser;
+    EditText editTelefonoUser;
+    EditText editPasswordUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_layout);
 
+        editEmailUser = findViewById(R.id.textEmailUser);
+        editTelefonoUser = findViewById(R.id.textPhoneUser);
+        editPasswordUser = findViewById(R.id.textPasswordUser);
         editTextUsername = findViewById(R.id.textUserName);
-        sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+
 
     }
     public void clickEnviar(View view) {
         Intent intent;
         switch (view.getId()) {
             case R.id.buttonRegister: {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(KEY_USERNAME, editTextUsername.getText().toString());
-                editor.apply();
-                Toast.makeText(this, "Username Vacio", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this, MainMenuLayoutActivity.class);
-                startActivity(intent);
-                break;
+                if(!editTelefonoUser.equals("") && !editPasswordUser.equals("") && !editTextUsername.equals("") && !editEmailUser.equals("") ) {
+                    intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                    break;
+                }else {
+                    Toast.makeText(this, "Datos Incompletos", Toast.LENGTH_SHORT).show();
+                }
             }
             case R.id.selecionarpunto:{
-                String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "No hay username");
-                if (!usernameFromPreferences.equals("")) {
-                    Toast.makeText(this, usernameFromPreferences, Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "Username Vacio", Toast.LENGTH_SHORT).show();
-                }
                 break;
             }
 

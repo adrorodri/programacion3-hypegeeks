@@ -4,53 +4,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#b74424">
+    android:background="@drawable/fondo_todo">
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#b74424"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:background="@drawable/fondo_titulo"
         android:gravity="center"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:layout_marginStart="39dp"
         android:text="@string/rep"
         android:textSize="50dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="80"
-        android:textSize="150dp"
+        android:textSize="130dp"
         android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp" />
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
             android:textStyle="bold"
             android:layout_marginStart="70dp"
             android:textSize="30dp"
             android:layout_marginTop="50dp"
             android:textColor="#ffffff"
-            android:background="#663325"
+            android:background="@drawable/fondo_boton"
             android:text="VER"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="90dp"
-            android:background="#b74424"
+            android:background="@drawable/fondo_boton"
             android:onClick="clickRepetidas"
             android:layout_marginStart="40dp"
             android:id="@+id/add"
-            android:src="@drawable/aniadir"
+            android:src="@drawable/ic_action_add"
             android:layout_marginTop="0dp"/>
 
     </LinearLayout>
     <ImageButton
         android:layout_width="100dp"
         android:layout_height="90dp"
-        android:background="#b74424"
+        android:src="@drawable/ic_action_busqueda"
         android:layout_marginStart="270dp"
-        android:src="@drawable/buscar"/>
+        android:background="@drawable/fondo_boton"/>
 </LinearLayout>

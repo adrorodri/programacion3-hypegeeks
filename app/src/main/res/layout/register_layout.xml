@@ -5,12 +5,30 @@
     android:layout_height="fill_parent"
     android:padding="20dp"
     android:orientation="vertical"
-    android:background="@drawable/copita">
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/profilepic"
-        android:layout_gravity="center"/>
+    android:background="@drawable/fondo_todo">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profilepic" />
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/ic_action_camera"/>
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_action_gallery"/>
+    </LinearLayout>
+
 
     <EditText
         android:id="@+id/textUserName"
@@ -19,58 +37,59 @@
         android:layout_marginTop="10dp"
         android:drawableLeft="@drawable/ic_action_user"
         android:hint="Usuario"
+        android:textColorHint="#635959"
         android:inputType="text" />
     <EditText
-        android:id="@+id/textEmail"
+        android:id="@+id/textEmailUser"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="Email"
+        android:textColorHint="#635959"
         android:drawableLeft="@drawable/ic_action_email"
         android:inputType="textEmailAddress"/>
     <EditText
-        android:id="@+id/textPhone"
+        android:id="@+id/textPhoneUser"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#635959"
         android:layout_marginTop="10dp"
         android:hint="Teléfono"
         android:drawableLeft="@drawable/ic_action_phone"
         android:inputType="number" />
-    <Button
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-        android:id="@+id/selecionarpunto"
-    android:layout_gravity="center_horizontal"
-    android:text = " Selecionar Punto de encuentro"
-        android:layout_marginTop="10dp" />
 
     <EditText
-        android:id="@+id/textPassword"
+        android:id="@+id/textPasswordUser"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="7dp"
+        android:textColorHint="#635959"
         android:drawableLeft="@drawable/ic_action_password"
         android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"/>
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="320dp"
+        android:id="@+id/selecionarpunto"
+        android:background="@drawable/fondo_titulo"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:text = " Selecionar Punto de encuentro"
+        android:layout_marginTop="-15dp" />
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
         android:onClick="clickEnviar"
-        android:layout_marginTop="-10dp"
+        android:layout_marginTop="0dp"
         android:paddingLeft="15dp"
+        android:textColor="#ffff"
         android:paddingRight="15dp"
-        android:text="enviar" />
+        android:background="@drawable/fondo_boton"
+        android:text="Log In"/>
 
-    <TextView android:id="@+id/register_error"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:gravity="center"
-        android:textSize="20dip"
-        android:textColor="#0b84aa"/>
+
 </LinearLayout>

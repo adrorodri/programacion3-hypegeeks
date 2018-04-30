@@ -5,44 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.programacion3.hypegeeks.app.MainActivity"
-    android:background="@drawable/copita"
+    android:background="@drawable/fondo_log_in"
     android:orientation="vertical">
 
-             <TextView
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text = "Pa Ti Pa Mi"
-                 android:layout_marginTop="50dp"
-                 android:layout_gravity="center_horizontal"
-                 android:textSize="50dp"
-                 android:textColor = "#ffffff" />
 
-            <EditText
-                android:id="@+id/User"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:hint="USER NAME"
-                android:drawableLeft="@drawable/ic_action_user"
-                android:textColorHint="#ffffff"/>
+    <EditText
+        android:id="@+id/User"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="220dp"
+        android:drawableLeft="@drawable/ic_action_user"
+        android:hint="USER NAME"
+        android:textColorHint="#635959" />
 
-            <EditText
-                android:id="@+id/Password"
-                android:layout_width="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:hint="PASSWORD"
-                android:drawableLeft="@drawable/ic_action_password"
-                android:textColorHint="#ffffff"
-                android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_action_password"
+        android:hint="PASSWORD"
+        android:inputType="textPassword"
+        android:textColorHint="#635959"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        android:id="@+id/remember"
+        android:onClick="clickButtonClick"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="center_horizontal"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="20dp">
         <Button
             android:id="@+id/resgistro"
             android:layout_width="139dp"
@@ -51,8 +51,10 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="40dp"
             android:onClick="clickButtonClick"
-            android:background="#f1ca7c"
-            android:text="Sign In" />
+            android:background="@drawable/fondo_boton"
+            android:text="Sign In"
+            android:textSize="10pt"
+            android:textColor="#ffffff"/>
 
         <Button
             android:id="@+id/enter"
@@ -62,7 +64,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="30dp"
             android:onClick="clickButtonClick"
-            android:background="#f1ca7c"
-            android:text="Log In" />
+            android:background ="@drawable/fondo_boton"
+            android:text="Log In"
+            android:textSize="10pt"
+            android:textColor="#ffffff"/>
         </LinearLayout>
 </LinearLayout>

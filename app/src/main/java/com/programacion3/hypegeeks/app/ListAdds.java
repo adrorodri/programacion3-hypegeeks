@@ -26,7 +26,7 @@ public class ListAdds extends AppCompatActivity {
     //figuritasList=llenador.getFiguritasList();
 
         for(int i =0; i<15;i++){
-            figuritasList.add(new Figuritas(i,R.drawable.copita,R.drawable.buscar,""+i));
+            figuritasList.add(new Figuritas(i,R.drawable.argentina,R.drawable.messi,""+i));
 
         }
 
