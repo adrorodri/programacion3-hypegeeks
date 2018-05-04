@@ -2,8 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="#f70a32">
+    android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/figuritaDeJugador"
@@ -36,7 +35,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:background="#f70a32" />
+            android:background="@drawable/fondo_titulo" />
 
     </FrameLayout>
     <Button

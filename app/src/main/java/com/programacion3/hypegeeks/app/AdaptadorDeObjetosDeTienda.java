@@ -59,6 +59,6 @@ foto.setOnClickListener(new View.OnClickListener() {
     }
 });
 
-        return null;
+        return view;
     }
 }

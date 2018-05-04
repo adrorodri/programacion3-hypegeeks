@@ -34,6 +34,7 @@
             android:layout_margin="4dp"
             android:background="@drawable/fondo_titulo"
             android:id="@+id/carrito"
+            android:onClick="clickMainMenu"
             android:src="@drawable/ic_action_carrito" />
 
     </LinearLayout>

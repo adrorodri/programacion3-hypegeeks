@@ -31,13 +31,14 @@ public class RegisterLayoutActivity extends AppCompatActivity {
         Intent intent;
         switch (view.getId()) {
             case R.id.buttonRegister: {
-                if(!editTelefonoUser.equals("") && !editPasswordUser.equals("") && !editTextUsername.equals("") && !editEmailUser.equals("") ) {
+                if(!editTelefonoUser.getText().toString().equals("") && !editPasswordUser.getText().toString().equals("")
+                        && !editTextUsername.getText().toString().equals("") && !editEmailUser.getText().toString().equals("") ) {
                     intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
-                    break;
                 }else {
                     Toast.makeText(this, "Datos Incompletos", Toast.LENGTH_SHORT).show();
                 }
+                break;
             }
             case R.id.selecionarpunto:{
                 break;

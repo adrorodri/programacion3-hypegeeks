@@ -1,40 +1,48 @@
 package com.programacion3.hypegeeks.app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-
 
 public class MainActivity extends AppCompatActivity {
     EditText enterUser;
     EditText enterPassword;
     String userValue;
     String passwordValue;
+   // ImageView error;
     List<String> users;
     List<String> passwords;
-    CheckBox checkBoxLogIn;
+   // CheckBox checkBoxLogIn;
+
+    SharedPreferences sharedPreferences;
+    static final String SHARED_PREFERENCES = "MySharedPreferences";
+    static final String KEY_USERNAME = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        checkBoxLogIn = findViewById(R.id.remember);
-        if(checkBoxLogIn.isChecked()== true){
-            setContentView(R.layout.main_menu_layout);
-        }else{
-            setContentView(R.layout.activity_main);
-        }
+        sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+       // checkBoxLogIn = findViewById(R.id.remember);
 
+        String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "No existe username!");
+           if (!usernameFromPreferences.equals("")) {
+                setContentView(R.layout.main_menu_layout);
+               Toast.makeText(this, "esta lleno", Toast.LENGTH_SHORT).show();
+           } else {
+               setContentView(R.layout.activity_main);
+               Toast.makeText(this, "esta vacio", Toast.LENGTH_SHORT).show();
+           }
+         //error = ImageView(R.drawable.ic_action_error);
         enterUser = findViewById(R.id.User);
         enterPassword = findViewById(R.id.Password);
 
@@ -54,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickButtonClick(View view) {
-        userValue = String.valueOf(enterUser.getText());
-        passwordValue = String.valueOf(enterPassword.getText());
+        userValue = String.valueOf(enterUser.getText().toString());
+        passwordValue = String.valueOf(enterPassword.getText().toString());
         Intent intent;
 
         switch (view.getId()) {
@@ -64,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
                     if (!passwordValue.equals("")){
                         if (users.contains(userValue)) {
                             if (passwords.get(users.indexOf(userValue)).equals(passwordValue)) {
+
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString(KEY_USERNAME, userValue);
+                                editor.apply();
+                                Toast.makeText(this, "Valor guardado correctamente!", Toast.LENGTH_SHORT).show();
+
                                 intent = new Intent(this, MainMenuLayoutActivity.class);
                                 startActivity(intent);
                             } else {
@@ -78,8 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(this, "Introdusca un Usuario", Toast.LENGTH_SHORT).show();
                 }
-
-
               break;
             }
             case R.id.resgistro: {

@@ -24,6 +24,11 @@ public class MainMenuLayoutActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
+            case R.id.carrito:{
+                intent = new Intent(this,Tienda.class);
+                startActivity(intent);
+                break;
+            }
         }
     }
 }

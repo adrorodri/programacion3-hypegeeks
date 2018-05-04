@@ -89,7 +89,5 @@
         android:textColor="#ffff"
         android:paddingRight="15dp"
         android:background="@drawable/fondo_boton"
-        android:text="Log In"/>
-
-
+        android:text="Enviar"/>
 </LinearLayout>
