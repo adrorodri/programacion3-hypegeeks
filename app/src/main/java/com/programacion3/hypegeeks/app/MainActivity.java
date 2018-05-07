@@ -17,10 +17,8 @@ public class MainActivity extends AppCompatActivity {
     EditText enterPassword;
     String userValue;
     String passwordValue;
-   // ImageView error;
     List<String> users;
     List<String> passwords;
-   // CheckBox checkBoxLogIn;
 
     SharedPreferences sharedPreferences;
     static final String SHARED_PREFERENCES = "MySharedPreferences";
@@ -29,14 +27,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-       // checkBoxLogIn = findViewById(R.id.remember);
 
         String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "No existe username!");
            if (!usernameFromPreferences.equals("")) {
-                setContentView(R.layout.main_menu_layout);
+                Intent intent = new Intent(this, MainMenuLayoutActivity.class);
+               startActivity(intent);
                Toast.makeText(this, "esta lleno", Toast.LENGTH_SHORT).show();
            } else {
                setContentView(R.layout.activity_main);

@@ -24,8 +24,6 @@ public class RegisterLayoutActivity extends AppCompatActivity {
         editTelefonoUser = findViewById(R.id.textPhoneUser);
         editPasswordUser = findViewById(R.id.textPasswordUser);
         editTextUsername = findViewById(R.id.textUserName);
-
-
     }
     public void clickEnviar(View view) {
         Intent intent;
