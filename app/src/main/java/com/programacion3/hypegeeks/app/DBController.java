@@ -48,7 +48,7 @@ public class DBController extends SQLiteOpenHelper {
 
     public List<Usuario> selectAllPersonas() {
         List<Usuario> personList = new LinkedList<>();
-        
+
         return personList;
     }
 
