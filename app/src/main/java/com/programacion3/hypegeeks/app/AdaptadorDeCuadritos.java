@@ -12,6 +12,8 @@ import java.util.List;
 
 public  class AdaptadorDeCuadritos extends RecyclerView.Adapter<AdaptadorDeCuadritos.ViewHolder> {
 
+    //hola
+
     private List<Cuadritos> data;
 
     static  class ViewHolder extends RecyclerView.ViewHolder {
