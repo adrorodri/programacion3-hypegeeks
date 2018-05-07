@@ -24,14 +24,9 @@ public class ListAdds extends AppCompatActivity {
 
         recyclerView= findViewById(R.id.ListaAdds);
 
-       // LlenadorDeListasAdd llenador = new LlenadorDeListasAdd(figuritasList);
+        LlenadorDelista();
 
-    //figuritasList=llenador.getFiguritasList();
 
-        for(int i =0; i<15;i++){
-            figuritasList.add(new Figuritas(i,R.drawable.argentina,R.drawable.messi,""+i));
-
-        }
 
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -40,6 +35,17 @@ public class ListAdds extends AppCompatActivity {
 
         AdapterAdds adapter= new AdapterAdds(figuritasList);
         recyclerView.setAdapter(adapter);
+
+    }
+
+    private void LlenadorDelista() {
+
+        //por ahora
+
+        for(int i =0; i<15;i++){
+            figuritasList.add(new Figuritas(i,R.drawable.argentina,R.drawable.messi,""+i));
+
+        }
 
     }
 }

@@ -20,12 +20,8 @@ public class Tienda extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.listaDeTienda);
 
-       // LlenadordeListTienda llenador = new LlenadordeListTienda(tiendaList);
-       // tiendaList=llenador.getList();
-        for(int i =0; i<15;i++){
-            tiendaList.add(new ObjetosDeTienda(i,R.drawable.messi,""+i));
+     LlenadorDeLista();
 
-        }
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -33,5 +29,13 @@ public class Tienda extends AppCompatActivity {
         AdaptadorDeObjetosDeTienda adapter = new AdaptadorDeObjetosDeTienda(tiendaList);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    private void LlenadorDeLista() {
+
+        for(int i =0; i<15;i++){
+            tiendaList.add(new ObjetosDeTienda(i,R.drawable.messi,""+i));
+
+        }
     }
 }
