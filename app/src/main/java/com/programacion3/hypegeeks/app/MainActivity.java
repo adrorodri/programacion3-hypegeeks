@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     String passwordValue;
     List<String> users;
     List<String> passwords;
+    CheckBox checkBox;
 
     SharedPreferences sharedPreferences;
     static final String SHARED_PREFERENCES = "MySharedPreferences";
@@ -27,19 +28,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        checkBox = findViewById(R.id.remember);
 
-        String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "No existe username!");
+        String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "");
            if (!usernameFromPreferences.equals("")) {
-                Intent intent = new Intent(this, MainMenuLayoutActivity.class);
+               Intent intent = new Intent(this, MainMenuLayoutActivity.class);
                startActivity(intent);
-               Toast.makeText(this, "esta lleno", Toast.LENGTH_SHORT).show();
-           } else {
-               setContentView(R.layout.activity_main);
-               Toast.makeText(this, "esta vacio", Toast.LENGTH_SHORT).show();
            }
-         //error = ImageView(R.drawable.ic_action_error);
         enterUser = findViewById(R.id.User);
         enterPassword = findViewById(R.id.Password);
 
@@ -59,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickButtonClick(View view) {
-        userValue = String.valueOf(enterUser.getText().toString());
-        passwordValue = String.valueOf(enterPassword.getText().toString());
+        userValue = String.valueOf(enterUser.getText().toString().trim());
+        passwordValue = String.valueOf(enterPassword.getText().toString().trim());
         Intent intent;
 
         switch (view.getId()) {
@@ -73,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(KEY_USERNAME, userValue);
                                 editor.apply();
-                                Toast.makeText(this, "Valor guardado correctamente!", Toast.LENGTH_SHORT).show();
 
                                 intent = new Intent(this, MainMenuLayoutActivity.class);
                                 startActivity(intent);
