@@ -28,11 +28,11 @@
             android:background="@drawable/fondo_titulo" />
     </RelativeLayout>
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/fondo_listas"
         android:id="@+id/ListaAdds">
-    </ListView>
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

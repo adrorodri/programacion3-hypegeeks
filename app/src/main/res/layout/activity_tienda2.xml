@@ -42,7 +42,7 @@
             android:background="@drawable/fondo_titulo"/>
 
     </LinearLayout>
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/listaDeTienda"
         android:layout_width="305dp"
         android:layout_height="311dp"

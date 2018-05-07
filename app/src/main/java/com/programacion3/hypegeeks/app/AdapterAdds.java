@@ -1,75 +1,62 @@
 package com.programacion3.hypegeeks.app;
 
 
-import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.LinkedList;
 import java.util.List;
 
-public class AdapterAdds extends BaseAdapter {
+public class AdapterAdds extends RecyclerView.Adapter<AdapterAdds.ViewHolder> {
 
-   Context context;
-    List<Figuritas> AddsList = new LinkedList<>();
-    LayoutInflater inflater;
+private List<Figuritas> data;
 
-    public AdapterAdds(Context context,List<Figuritas> AddsList ){
-        this.AddsList=AddsList;
-        this.context=context;
-    }
-    @Override
-    public int getCount() {
-        return AddsList.size();
-    }
 
-    @Override
-    public Object getItem(int position) {
-        return AddsList.get(position);
-    }
+    static  class ViewHolder extends RecyclerView.ViewHolder{
 
-    @Override
-    public long getItemId(int i) {
-        return AddsList.get(i).getId();
-    }
+        ImageView foto;
+        ImageView bandera;
+        TextView numeroDeFigurita;
+        Button button;
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup viewGroup) {
+        ViewHolder (View view){
+            super(view);
+            foto  = view.findViewById(R.id.figuritaDeJugador);
+            bandera = view.findViewById(R.id.banderaDelPais);
+            numeroDeFigurita = view.findViewById(R.id.numroDeFigurita);
+            button = view.findViewById(R.id.buttonAdd);
 
-        if(convertView==null){
-            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-
-            convertView = layoutInflater.inflate(R.layout.adds_figuritas,null);
         }
 
-        TextView numeroDeFigurita = convertView.findViewById(R.id.numroDeFigurita);
-        numeroDeFigurita.setText(AddsList.get(position).getNumeroDeFigurita());
+    }
 
-        ImageView foto = convertView.findViewById(R.id.figuritaDeJugador);
-        foto.setImageResource(AddsList.get(position).getFoto());
+    public AdapterAdds(List<Figuritas> data) {
+        this.data = data;
+    }
 
-        ImageView bandera = convertView.findViewById(R.id.banderaDelPais);
-        bandera.setImageResource(AddsList.get(position).getBandera());
+    @Override
+    public AdapterAdds.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adds_figuritas,parent,false);
+        return  new ViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(AdapterAdds.ViewHolder holder, int position) {
+
+        holder.foto.setImageResource(data.get(position).getFoto());
+        holder.bandera.setImageResource(data.get(position).getBandera());
+        holder.numeroDeFigurita.setText(data.get(position).getNumeroDeFigurita());
+        //hay que ponerle funcion al botton
 
 
-//Talvez aquí talvez halla un problema
-        final Button button = convertView.findViewById(R.id.buttonAdd);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
-                if(button.getText().equals("+")){
-                    button.setText("-");
-                }else{
-                    button.setText("+");
-                }
-            }
-        });
-        return convertView;
+    @Override
+    public int getItemCount() {
+        return data.size();
     }
 }

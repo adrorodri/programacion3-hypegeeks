@@ -2,6 +2,9 @@ package com.programacion3.hypegeeks.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 
 import java.util.LinkedList;
@@ -11,7 +14,7 @@ import java.util.List;
 
 public class ListAdds extends AppCompatActivity {
 
-    ListView listView;
+    RecyclerView recyclerView;
     List<Figuritas> figuritasList= new LinkedList<>();
 
     @Override
@@ -19,7 +22,7 @@ public class ListAdds extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_adds);
 
-        ListView listView= findViewById(R.id.ListaAdds);
+        recyclerView= findViewById(R.id.ListaAdds);
 
        // LlenadorDeListasAdd llenador = new LlenadorDeListasAdd(figuritasList);
 
@@ -30,8 +33,13 @@ public class ListAdds extends AppCompatActivity {
 
         }
 
-        AdapterAdds adapter= new AdapterAdds(this, figuritasList);
-        listView.setAdapter(adapter);
+        LinearLayoutManager linearLayoutManager= new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+
+
+        AdapterAdds adapter= new AdapterAdds(figuritasList);
+        recyclerView.setAdapter(adapter);
 
     }
 }

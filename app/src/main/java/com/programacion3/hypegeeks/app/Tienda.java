@@ -2,13 +2,15 @@ package com.programacion3.hypegeeks.app;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Tienda extends AppCompatActivity {
 
-   private ListView listView;
+   private RecyclerView recyclerView;
    private List<ObjetosDeTienda> tiendaList= new LinkedList<>();
 
     @Override
@@ -16,7 +18,7 @@ public class Tienda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tienda2);
 
-        listView = findViewById(R.id.listaDeTienda);
+        recyclerView = findViewById(R.id.listaDeTienda);
 
        // LlenadordeListTienda llenador = new LlenadordeListTienda(tiendaList);
        // tiendaList=llenador.getList();
@@ -25,8 +27,11 @@ public class Tienda extends AppCompatActivity {
 
         }
 
-        AdaptadorDeObjetosDeTienda adapter = new AdaptadorDeObjetosDeTienda(this,tiendaList);
-        listView.setAdapter(adapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        AdaptadorDeObjetosDeTienda adapter = new AdaptadorDeObjetosDeTienda(tiendaList);
+        recyclerView.setAdapter(adapter);
 
     }
 }
