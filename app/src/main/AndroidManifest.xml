@@ -21,7 +21,7 @@
         <activity android:name=".RegisterLayoutActivity" />
         <activity android:name=".RepeLayoutActivity" />
         <activity android:name=".Tienda" />
-        <activity android:name=".PuntosDeEncuentro"></activity>
+        <activity android:name=".PuntosDeEncuentroActivity"></activity>
     </application>
 
 </manifest>
