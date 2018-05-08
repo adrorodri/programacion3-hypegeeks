@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PuntosDeEncuentro extends AppCompatActivity {
+public class PuntosDeEncuentroActivity extends AppCompatActivity {
 
     List<PuntosParaPuntosDeEncuentro> data = new LinkedList<>();
     RecyclerView recyclerView;
@@ -26,11 +26,8 @@ public class PuntosDeEncuentro extends AppCompatActivity {
 
         AdaptadorDePuntosDeEncuentros adapter = new AdaptadorDePuntosDeEncuentros(data);
         recyclerView.setAdapter(adapter);
-
     }
-
     private void LlenadorDeLista() {
-
         for(int i=0;i<15;i++){
             data.add(new PuntosParaPuntosDeEncuentro("Calle No "+i));
         }

@@ -62,21 +62,21 @@
         android:id="@+id/textPasswordUser"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="3dp"
         android:layout_marginTop="7dp"
         android:textColorHint="#635959"
         android:drawableLeft="@drawable/ic_action_password"
         android:hint="Contraseña"
         android:inputType="textPassword"/>
-    <Button
-        android:layout_height="50dp"
-        android:layout_width="320dp"
-        android:id="@+id/selecionarpunto"
-        android:background="@drawable/fondo_titulo"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffffff"
-        android:text = " Selecionar Punto de encuentro"
-        android:layout_marginTop="-15dp" />
+    <EditText
+        android:id="@+id/textPuntoUser"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="7dp"
+        android:textColorHint="#635959"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:hint="Zona de Encuentro" />
 
     <Button
         android:id="@+id/buttonRegister"
