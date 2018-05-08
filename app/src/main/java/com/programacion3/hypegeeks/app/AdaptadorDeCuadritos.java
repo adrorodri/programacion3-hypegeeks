@@ -38,10 +38,13 @@ public  class AdaptadorDeCuadritos extends RecyclerView.Adapter<AdaptadorDeCuadr
     }
 
     @Override
+
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-    if(false) {
         holder.numeroDefigura.setText(data.get(position).getText());
+
+    if(false) {
+
         holder.numeroDefigura.setBackgroundResource(R.drawable.boton_redondo);
     }
 
