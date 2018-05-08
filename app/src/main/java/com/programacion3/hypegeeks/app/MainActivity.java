@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
     EditText enterPassword;
     String userValue;
     String passwordValue;
-    List<Usuario> usersList;
-    DBController dbController;
+    List<String> users;
+    List<String> passwords;
+    CheckBox checkBox;
 
     SharedPreferences sharedPreferences;
     static final String SHARED_PREFERENCES = "MySharedPreferences";
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        checkBox = findViewById(R.id.remember);
 
         String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "");
            if (!usernameFromPreferences.equals("")) {
@@ -40,7 +41,20 @@ public class MainActivity extends AppCompatActivity {
            }
         enterUser = findViewById(R.id.User);
         enterPassword = findViewById(R.id.Password);
-        usersList = new LinkedList<>();
+
+        users = new ArrayList<>();
+        passwords = new ArrayList<>();
+        users.add("camilo");
+        passwords.add("123");
+        users.add("camila");
+        passwords.add("456");
+        users.add("sergio");
+        passwords.add("789");
+        users.add("jorge");
+        passwords.add("1011");
+        users.add("vivian");
+        passwords.add("1213");
+
     }
 
     public void clickButtonClick(View view) {
@@ -52,11 +66,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.enter: {
                 if (!userValue.equals("")){
                     if (!passwordValue.equals("")){
-                        this.usersList.clear();
-                        this.usersList.addAll(dbController.selectUsuarioContrasenia());
-
-                        if (usersList.contains(userValue)) {
-                            if (usersList.get(usersList.indexOf(userValue)).equals(passwordValue)) {
+                        if (users.contains(userValue)) {
+                            if (passwords.get(users.indexOf(userValue)).equals(passwordValue)) {
 
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(KEY_USERNAME, userValue);
