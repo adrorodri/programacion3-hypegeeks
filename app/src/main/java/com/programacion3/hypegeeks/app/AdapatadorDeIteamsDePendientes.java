@@ -18,6 +18,7 @@ public class AdapatadorDeIteamsDePendientes extends RecyclerView.Adapter<Adapata
         ImageView iconito;
         ImageView segundaFoto;
         ImageButton boton;
+        TextView direccion;
 
         public ViewHolder(View v) {
             super(v);
@@ -25,6 +26,7 @@ public class AdapatadorDeIteamsDePendientes extends RecyclerView.Adapter<Adapata
             iconito = v.findViewById(R.id.iconoDePendientes);
             segundaFoto= v.findViewById(R.id.segundaFiguritaDePendientes);
             boton = v.findViewById(R.id.botonDePendientes);
+            direccion=v.findViewById(R.id.direccionDePendientes);
 
         }
     }
@@ -48,6 +50,7 @@ public class AdapatadorDeIteamsDePendientes extends RecyclerView.Adapter<Adapata
         holder.segundaFoto.setImageResource(data.get(position).getSegundaFigurita());
         holder.iconito.setImageResource(R.drawable.boton_redondo);
         holder.boton.setImageResource(R.drawable.ic_action_name);
+        holder.direccion.setText(data.get(position).getDireccion());
         //funcionalidad del buton
 
     }
