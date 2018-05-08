@@ -1,7 +1,9 @@
 package com.programacion3.hypegeeks.app;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +14,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import pub.devrel.easypermissions.EasyPermissions;
+import pub.devrel.easypermissions.PermissionRequest;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     EditText enterUser;
     EditText enterPassword;
     String userValue;
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     static final String SHARED_PREFERENCES = "MySharedPreferences";
     static final String KEY_USERNAME = "username";
+
+    private static final int RC_CAMERA_AND_LOCATION = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         enterPassword = findViewById(R.id.Password);
 
         usersList = new LinkedList<>();
+
+        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        EasyPermissions.requestPermissions(
+                new PermissionRequest.Builder(this, RC_CAMERA_AND_LOCATION, perms)
+                        .build());
     }
 
     public void clickButtonClick(View view) {
@@ -84,5 +96,24 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+        Toast.makeText(this, "PERMISOS ACEPTADOS!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+        Toast.makeText(this, "PERMISOS RECHAZADOS!", Toast.LENGTH_SHORT).show();
+        // Close the app, as we don't have permissions to use it. App may crash!
+        finish();
     }
 }
