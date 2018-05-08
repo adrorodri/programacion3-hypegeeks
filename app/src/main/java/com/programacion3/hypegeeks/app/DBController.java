@@ -46,18 +46,23 @@ public class DBController extends SQLiteOpenHelper {
         return true;
     }
 
-    public List<Usuario> selectUsuarioContrasenia() {
-        List<Usuario> usuarioList = new LinkedList<>();
-        Cursor cursor = getReadableDatabase().rawQuery("SELECT * FROM Usuarios", null);
+    public List<String> selectUsuario() {
+        List<String> usuarioList = new LinkedList<>();
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT Usuario FROM Usuarios", null);
         while (cursor.moveToNext()) {
-            usuarioList.add(new Usuario(
-                    cursor.getString(1),
-                    cursor.getString(2),
-                    cursor.getInt(3),
-                    cursor.getString(4),
-                    cursor.getString(5)));
+            usuarioList.add(new String(
+                    cursor.getString(1)));
         }
         return usuarioList;
+    }
+    public List<String> selectPassword() {
+        List<String> passwordList = new LinkedList<>();
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT Password FROM Usuarios", null);
+        while (cursor.moveToNext()) {
+            passwordList.add(new String(
+                    cursor.getString(1)));
+        }
+        return passwordList;
     }
 
 

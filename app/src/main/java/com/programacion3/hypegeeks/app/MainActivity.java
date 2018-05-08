@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     EditText enterPassword;
     String userValue;
     String passwordValue;
-    List<Usuario> usersList;
+    List<String> usersList;
+    List<String> passwordList;
     DBController dbController;
 
     SharedPreferences sharedPreferences;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
            }
         enterUser = findViewById(R.id.User);
         enterPassword = findViewById(R.id.Password);
-
+        passwordList = new LinkedList<>();
         usersList = new LinkedList<>();
 
         String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -64,11 +65,16 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         switch (view.getId()) {
             case R.id.enter: {
                 if (!userValue.equals("")){
-                    if (!passwordValue.equals("")){
-                        this.usersList.clear();
-                        this.usersList.addAll(dbController.selectUsuarioContrasenia());
-                        if (usersList.contains(userValue)) {
-                            if (usersList.get(usersList.indexOf(userValue)).equals(passwordValue)) {
+                    if(!passwordValue.equals("")){
+
+                         this.usersList.clear();
+                         this.usersList.addAll(dbController.selectUsuario());
+
+                         this.passwordList.clear();
+                         this.passwordList.addAll(dbController.selectPassword());
+
+                         if (usersList.contains(userValue)) {
+                             if (usersList.get(passwordList.indexOf(userValue)).equals(passwordValue)) {
 
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(KEY_USERNAME, userValue);
@@ -76,12 +82,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
                                 intent = new Intent(this, MainMenuLayoutActivity.class);
                                 startActivity(intent);
-                            } else {
+                             } else {
                                 Toast.makeText(this, "Contrasenia incorrecta", Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
+                             }
+                         } else {
                             Toast.makeText(this, "usuario incorrecto", Toast.LENGTH_SHORT).show();
-                        }
+                         }
                     }else {
                         Toast.makeText(this, "Introdusca una Contraseña", Toast.LENGTH_SHORT).show();
                     }
