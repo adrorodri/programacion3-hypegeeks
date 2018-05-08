@@ -46,11 +46,20 @@ public class DBController extends SQLiteOpenHelper {
         return true;
     }
 
-    public List<Usuario> selectAllPersonas() {
-        List<Usuario> personList = new LinkedList<>();
-
-        return personList;
+    public List<Usuario> selectUsuarioContrasenia() {
+        List<Usuario> usuarioList = new LinkedList<>();
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT * FROM Usuarios", null);
+        while (cursor.moveToNext()) {
+            usuarioList.add(new Usuario(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getInt(3),
+                    cursor.getString(4),
+                    cursor.getString(5)));
+        }
+        return usuarioList;
     }
+
 
     public boolean updatePersona(String nombre, String apellido, String codigoUpb) {
         try {
