@@ -43,7 +43,7 @@ public class AdaptadorDePuntosDeEncuentros extends RecyclerView.Adapter<Adaptado
     public void onBindViewHolder(ViewHolder holder, int position) {
 
 holder.direccion.setText(data.get(position).getDireccion());
-holder.button.setImageResource(R.drawable.boton_redondo);
+holder.button.setImageResource(R.drawable.ic_action_name);
 holder.button.setScaleType(ImageView.ScaleType.FIT_CENTER);
     }
 
