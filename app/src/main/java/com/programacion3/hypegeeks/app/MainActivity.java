@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "");
            if (!usernameFromPreferences.equals("")) {
                Intent intent = new Intent(this, MainMenuLayoutActivity.class);
+               finish();
                startActivity(intent);
            }
         enterUser = findViewById(R.id.User);

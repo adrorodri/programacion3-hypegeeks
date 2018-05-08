@@ -18,26 +18,26 @@ public class DBController extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE Personas (_id INTEGER PRIMARY KEY AUTOINCREMENT, Nombre TEXT, Apellido TEXT, CodigoUpb TEXT UNIQUE);");
+        sqLiteDatabase.execSQL("CREATE TABLE Usuarios (_id INTEGER PRIMARY KEY AUTOINCREMENT, Usuario TEXT, Telefono INTEGER, Email TEXT,Punto TEXT, Password TEXT);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Personas;");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Usuarios;");
         onCreate(sqLiteDatabase);
     }
 
-    public boolean insertPersona(String username, String email, String password, String puntoEncuentro, int telefono) {
+    public boolean insertPersona(String username, String email, String password,String punto, int telefono) {
 
         try {
             ContentValues contentValues = new ContentValues();
-            contentValues.put("Nombre", username);
+            contentValues.put("Usuario", username);
             contentValues.put("Telefono", telefono);
             contentValues.put("Email", email);
-            contentValues.put("Punto", puntoEncuentro);
+            contentValues.put("Punto", punto);
             contentValues.put("Password", password);
 
-            getWritableDatabase().insertOrThrow("Personas", null, contentValues);
+            getWritableDatabase().insertOrThrow("Usuarios", null, contentValues);
 
         } catch (SQLException e) {
             return false;

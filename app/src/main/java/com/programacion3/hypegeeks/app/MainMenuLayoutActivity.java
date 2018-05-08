@@ -34,12 +34,6 @@ RecyclerView recyclerView;
 
     }
 
-
-
-
-
-
-
     public void clickMainMenu(View view){
         Intent intent;
         switch (view.getId()) {
