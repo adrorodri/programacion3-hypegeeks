@@ -44,6 +44,7 @@ public class AdaptadorDeObjetosDeTienda extends RecyclerView.Adapter<AdaptadorDe
 
         holder.precio.setText(Data.get(position).getPrecio());
         holder.foto.setImageResource(Data.get(position).getFoto());
+        holder.foto.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
     }
 
