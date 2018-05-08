@@ -40,10 +40,10 @@ public  class AdaptadorDeCuadritos extends RecyclerView.Adapter<AdaptadorDeCuadr
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-//aqui podriamos poner botones
+    if(false) {
         holder.numeroDefigura.setText(data.get(position).getText());
-holder.numeroDefigura.setBackgroundResource(R.drawable.boton_redondo);
-
+        holder.numeroDefigura.setBackgroundResource(R.drawable.boton_redondo);
+    }
 
     }
 
