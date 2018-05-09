@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -50,6 +51,11 @@ RecyclerView recyclerView;
             case R.id.carrito:{
                 intent = new Intent(this,Tienda.class);
                 startActivity(intent);
+                break;
+            }
+
+            case R.id.compartir:{
+                Toast.makeText(this, "Tu Lista fue compartida correctamente", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
