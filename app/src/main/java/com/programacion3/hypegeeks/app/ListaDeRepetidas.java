@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Pendientes extends AppCompatActivity {
+public class ListaDeRepetidas extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<IteamsDePendientes> data = new LinkedList<>();
@@ -16,14 +16,16 @@ public class Pendientes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pendientes);
+        setContentView(R.layout.activity_lista_de_repetidas);
+
         recyclerView = findViewById(R.id.listaDePendientes);
         llenadorDeLista();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         AdapatadorDeIteamsDePendientes adapter = new AdapatadorDeIteamsDePendientes(data);
         recyclerView.setAdapter(adapter);
-        }
+
+    }
 
     private void llenadorDeLista() {
 

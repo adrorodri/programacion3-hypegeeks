@@ -6,12 +6,22 @@ public class IteamsDePendientes {
     private int primeraFigurita;
     private int segundaFigurita;
     private int icono;
+    private String direccion;
     private int boton;
 
-    public IteamsDePendientes(int primeraFigurita, int segundaFigurita) {
+    public IteamsDePendientes(int primeraFigurita, String direccion ,int segundaFigurita) {
     this.primeraFigurita= primeraFigurita;
     this.segundaFigurita= segundaFigurita;
     this.boton= boton;
+    this.direccion=direccion;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public int getPrimeraFigurita() {
