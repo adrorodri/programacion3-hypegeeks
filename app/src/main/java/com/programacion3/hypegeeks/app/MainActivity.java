@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     EditText enterPassword;
     String userValue;
     String passwordValue;
-    List<String> usersList;
-    List<String> passwordList;
+    List<DatosLogIn> usersList;
     DBController dbController;
+  //  LenadoDeDBAlbum llenadoDeDBAlbum;
 
     SharedPreferences sharedPreferences;
     static final String SHARED_PREFERENCES = "MySharedPreferences";
@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //llenadoDeDBAlbum = new LenadoDeDBAlbum();
+       // llenadoDeDBAlbum.LlenadoAlbum();
+        dbController = new DBController(this, "Programacion3.db", null, 1);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
 
@@ -47,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
            }
         enterUser = findViewById(R.id.User);
         enterPassword = findViewById(R.id.Password);
-        passwordList = new LinkedList<>();
         usersList = new LinkedList<>();
 
         String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -68,18 +70,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     if(!passwordValue.equals("")){
 
                          this.usersList.clear();
-                         this.usersList.addAll(dbController.selectUsuario());
-
-                         this.passwordList.clear();
-                         this.passwordList.addAll(dbController.selectPassword());
+                         this.usersList.addAll(dbController.selectUsuarioPassword());
 
                          if (usersList.contains(userValue)) {
-                             if (usersList.get(passwordList.indexOf(userValue)).equals(passwordValue)) {
-
+                             if (usersList.get(usersList.indexOf(userValue)).equals(passwordValue)) {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(KEY_USERNAME, userValue);
                                 editor.apply();
-
                                 intent = new Intent(this, MainMenuLayoutActivity.class);
                                 startActivity(intent);
                              } else {

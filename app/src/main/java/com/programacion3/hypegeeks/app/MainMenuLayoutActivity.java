@@ -57,10 +57,8 @@ RecyclerView recyclerView;
 
     public void llenadorDeTabla(){
         //por ahora fors
-
         for(int i=1; i<121;i++){
             tablaDeContenidos.add(new Cuadritos(""+i));
-
         }
 
     }

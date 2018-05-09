@@ -19,11 +19,14 @@ public class DBController extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE Usuarios (_id INTEGER PRIMARY KEY AUTOINCREMENT, Usuario TEXT, Telefono INTEGER, Email TEXT,Punto TEXT, Password TEXT);");
+        sqLiteDatabase.execSQL("CREATE TABLE Album (_id INTEGER PRIMARY KEY AUTOINCREMENT, Numero INTEGER, Pais TEXT);");
+        sqLiteDatabase.execSQL("CREATE TABLE Figuritas (_id INTEGER PRIMARY KEY AUTOINCREMENT, Numero INTEGER, Usuario TEXT);");
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Usuarios;");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Album;");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS Figuritas;");
         onCreate(sqLiteDatabase);
     }
 
@@ -42,29 +45,35 @@ public class DBController extends SQLiteOpenHelper {
         } catch (SQLException e) {
             return false;
         }
-
         return true;
     }
+   // public  boolean insertAlbum(String pais,int numero){
+       // try {
+            //ContentValues contentValues = new ContentValues();
+           // contentValues.put("Numero", numero);
+            //contentValues.put("Pais", pais);
 
-    public List<String> selectUsuario() {
-        List<String> usuarioList = new LinkedList<>();
-        Cursor cursor = getReadableDatabase().rawQuery("SELECT Usuario FROM Usuarios", null);
-        while (cursor.moveToNext()) {
-            usuarioList.add(new String(
-                    cursor.getString(1)));
+          //  getWritableDatabase().insertOrThrow("Usuarios", null, contentValues);
+
+        //} catch (SQLException e) {
+         //   return false;
+       // }
+
+      //  return true;
+    //}
+
+    public List<DatosLogIn> selectUsuarioPassword() {
+        List<DatosLogIn> usuarioList = new LinkedList<>();
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT Usuario,Password FROM Usuarios", null);
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                usuarioList.add(new DatosLogIn(
+                        cursor.getString(1),
+                        cursor.getString(2)));
+            }
         }
         return usuarioList;
     }
-    public List<String> selectPassword() {
-        List<String> passwordList = new LinkedList<>();
-        Cursor cursor = getReadableDatabase().rawQuery("SELECT Password FROM Usuarios", null);
-        while (cursor.moveToNext()) {
-            passwordList.add(new String(
-                    cursor.getString(1)));
-        }
-        return passwordList;
-    }
-
 
     public boolean updatePersona(String nombre, String apellido, String codigoUpb) {
         try {
