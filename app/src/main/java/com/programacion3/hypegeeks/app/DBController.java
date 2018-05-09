@@ -18,7 +18,7 @@ public class DBController extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE Usuarios (_id INTEGER PRIMARY KEY AUTOINCREMENT, Usuario TEXT, Telefono INTEGER, Email TEXT,Punto TEXT, Password TEXT);");
+        sqLiteDatabase.execSQL("CREATE TABLE Usuarios ( id INTEGER PRIMARY KEY AUTOINCREMENT, Usuario TEXT, Telefono INTEGER, Email TEXT,Punto TEXT, Password TEXT);");
         sqLiteDatabase.execSQL("CREATE TABLE Album (_id INTEGER PRIMARY KEY AUTOINCREMENT, Numero INTEGER, Pais TEXT);");
         sqLiteDatabase.execSQL("CREATE TABLE Figuritas (_id INTEGER PRIMARY KEY AUTOINCREMENT, Numero INTEGER, Usuario TEXT);");
     }

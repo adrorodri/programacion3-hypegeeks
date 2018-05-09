@@ -24,7 +24,6 @@
         <activity android:name=".RegisterLayoutActivity" />
         <activity android:name=".RepeLayoutActivity" />
         <activity android:name=".Tienda" />
-        <activity android:name=".PuntosDeEncuentro" />
         <activity android:name=".ListaDeRepetidas"></activity>
     </application>
 
