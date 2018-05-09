@@ -68,8 +68,8 @@ public class DBController extends SQLiteOpenHelper {
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 usuarioList.add(new DatosLogIn(
-                        cursor.getString(1),
-                        cursor.getString(2)));
+                        cursor.getString(0),
+                        cursor.getString(1)));
             }
         }
         return usuarioList;

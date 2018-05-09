@@ -72,18 +72,20 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                          this.usersList.clear();
                          this.usersList.addAll(dbController.selectUsuarioPassword());
 
-                         if (usersList.contains(userValue)) {
-                             if (usersList.get(usersList.indexOf(userValue)).equals(passwordValue)) {
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString(KEY_USERNAME, userValue);
-                                editor.apply();
-                                intent = new Intent(this, MainMenuLayoutActivity.class);
-                                startActivity(intent);
+                         for(DatosLogIn usuario : this.usersList) {
+                             if (usuario.getUsuario().equals(userValue)) {
+                                 if (usuario.getPassword().equals(passwordValue)) {
+                                     SharedPreferences.Editor editor = sharedPreferences.edit();
+                                     editor.putString(KEY_USERNAME, userValue);
+                                     editor.apply();
+                                     intent = new Intent(this, MainMenuLayoutActivity.class);
+                                     startActivity(intent);
+                                 } else {
+                                     Toast.makeText(this, "Contrasenia incorrecta", Toast.LENGTH_SHORT).show();
+                                 }
                              } else {
-                                Toast.makeText(this, "Contrasenia incorrecta", Toast.LENGTH_SHORT).show();
+                                 Toast.makeText(this, "usuario incorrecto", Toast.LENGTH_SHORT).show();
                              }
-                         } else {
-                            Toast.makeText(this, "usuario incorrecto", Toast.LENGTH_SHORT).show();
                          }
                     }else {
                         Toast.makeText(this, "Introdusca una Contraseña", Toast.LENGTH_SHORT).show();

@@ -32,7 +32,7 @@ public class RegisterLayoutActivity extends AppCompatActivity {
         editPasswordUser = findViewById(R.id.textPasswordUser);
         editTextUsername = findViewById(R.id.textUserName);
         editPuntoUser = findViewById(R.id.textPuntoUser);
-        dbController = new DBController(this, "Programacion3-hypegeeks.db", null, 1);
+        dbController = new DBController(this, "Programacion3.db", null, 1);
 
     }
     public void clickEnviar(View view) {
